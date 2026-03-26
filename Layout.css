@@ -1,0 +1,171 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    
+    height: 100vh;
+    margin: 0;
+    background-image: url('img/background.jpg');
+    background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+    color: rgb(57, 255, 20)
+}
+top{
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+buttons{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    text-align: center;
+    background-color: rgb(36, 36, 36);
+    width: 100%;
+}
+midden {
+    align-items: center;
+    background-color: rgb(36,36,36);
+    width:80%;
+    padding : 10px;
+    text-align : center;
+    opacity: 0.8;
+
+}
+
+.letters {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    font-size: 60px;
+    text-align: center;
+    transition: font-size 0.3s;
+    color: rgb(255, 183, 0);
+    font-weight: 1000;
+
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 
+      -1px 1px 0 #000,
+      -2px 2px 0 #000,
+      -3px 3px 0 #000,
+      -4px 4px 0 #000,
+      -5px 5px 0 #000,
+      -6px 6px 0 #000,
+      -7px 7px 0 #000;
+    
+    
+      /* 40px 40px rgb(0, 0, 0); */
+      letter-spacing: 5px;
+    
+}
+
+
+
+.hidden-content {
+    text-align: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    justify-content: center;
+    width : 100%; /* Center the text within each hidden content div */
+    
+}
+
+
+/* Add styles for hidden content */
+.hidden-content > div {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 3s ease-in-out;
+
+    display: none;
+    font-size: 20px;
+    width: 100%;
+    height: 250px; /* Adjust font size as needed */
+}
+
+/* Modify hover styles to target hidden content within the .hidden-content div */
+.letterS:hover + .hidden-content .hiddenS,
+.letterW:hover + .hidden-content .hiddenW,
+.letterA:hover + .hidden-content .hiddenA,
+.letterT:hover + .hidden-content .hiddenT {
+    display: block;
+}
+
+.letterS:hover {
+    color: rgb(57, 255, 20); /* Turn the 'S' red when hovering over it */
+}
+
+.letterW:hover {
+    color: rgb(57, 255, 20); /* Turn the 'W' red when hovering over it */
+}
+
+.letterA:hover {
+    color: rgb(57, 255, 20); /* Turn the 'A' red when hovering over it */
+}
+
+.letterT:hover {
+    color: rgb(57, 255, 20); /* Turn the 'T' red when hovering over it */
+}
+
+.expl {
+    color : rgb(255, 183, 0);
+    text-shadow: 
+      -1px 1px 0 #000,
+      -2px 2px 0 #000,
+      -3px 3px 0 #000,
+      -4px 4px 0 #000,
+      -5px 5px 0 #000;
+    font-size : 24px;
+    font-weight: bolder;
+}
+
+button {
+    background-color: #000000; /* Green */
+    border: none;
+    color: rgb(255, 183, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bolder;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2); /* Add a shadow */
+
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+
+  .hr {
+    border: none;
+    border-top: 3px solid rgb(57, 255, 20); /* 3px solid line with green color */
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2); /* Add a shadow */
+    margin: 0;
+    padding: 0;
+    display: none;
+    opacity: 0.5;
+  }
+
+ .hrtop {
+    border: none;
+    border-top: 3px solid #4b4b4b; /* 3px solid line with green color */
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2); /* Add a shadow */
+    margin: 0;
+    padding: 0;
+  }
+
+  
+  #swatLogo {
+  width: 100%;
+  height: 100vh; /* volledige schermhoogte */
+  object-fit: cover; /* belangrijk! */
+  display: block;
+  }

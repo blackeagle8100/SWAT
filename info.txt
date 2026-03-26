@@ -1,0 +1,37 @@
+SWAT
+
+System, Web and Application Technics
+Open Source Solutions for Everyday Life
+
+Wie we zijn
+
+SWAT is een onafhankelijk initiatief dat gelooft in betaalbare, efficiënte en duurzame technologie. Wij werken niet voor grote merken – wij kiezen materialen en oplossingen die écht prijs/kwaliteit in orde zijn, en die toegankelijk blijven voor iedereen.
+
+Onze visie
+
+De computer is vandaag even onmisbaar als water of elektriciteit. Toch vragen bedrijven honderden euro’s voor softwarelicenties en dwingen ze je om de paar jaar een nieuwe pc te kopen.
+Kleine zelfstandigen blijven daarom hier meestal ook achter met verouderde en slecht beveiligde software.
+SWAT gelooft dat dit niet meer van deze tijd is.
+Daarom werken wij met open source software en blazen we oudere toestellen nieuw leven in zodat deze up-to-date zijn voor alledaags gebruik en dit zonder verborgen kosten.
+
+Wat we doen
+
+✅ Installatie en begeleiding van Linux systemen op maat.
+✅ ElderOS: eigen systeem voor ouderen en gezinnen, eenvoudig en praktisch.
+✅ Innovatieve projecten:
+
+HoverHelper – hoverboard omgebouwd met Arduino + Draadloze controller tot een drager van 120 kg. Handig onder grasmaaier, bolderkar,...
+
+GPS Tracker – Raspberry Pi + smartphone systeem dat real-time locaties toont op een website of eigen private server.
+https://wijwillenijsjes.onthewifi.com/
+
+
+Waarom kiezen voor SWAT?
+
+Geen verborgen licentiekosten → software is gratis.
+
+Hardware die blijft draaien → minder afval, meer duurzaamheid.
+
+Betaalbare prijzen → bv. HoverHelper ombouw vanaf €110 (inclusief onderdelen en arbeid).
+
+Transparant: wat je betaalt is materiaal + werk, niets meer.

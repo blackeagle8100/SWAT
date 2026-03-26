@@ -1,44 +1,74 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
     align-items: center;
-    
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     background-image: url('img/background.jpg');
     background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-    color: rgb(57, 255, 20)
+    background-position: center;
+    background-attachment: fixed;
+    color: rgb(57, 255, 20);
 }
-top{
-    justify-content: center; /* Center horizontally */
-    align-items: center;
+
+h2, h3 {
+    color: rgb(255, 183, 0);
 }
-buttons{
+
+header {
+    width: 100%;
+}
+
+
+.buttons {
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: center;
     align-items: center;
     text-align: center;
     background-color: rgb(36, 36, 36);
     width: 100%;
 }
-midden {
+
+main {
     align-items: center;
     background-color: rgb(36,36,36);
-    width:80%;
-    padding : 10px;
-    text-align : center;
+    width: 80%;
+    padding: 10px;
+    text-align: center;
     opacity: 0.8;
+}
 
+.buttons a {
+    background-color: #000000;
+    border: none;
+    color: rgb(255, 183, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bolder;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
+}
+
+.buttons a:hover {
+    opacity: 0.8;
+}
+
+
+.texturl {
+
+    color: red;
 }
 
 .letters {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
     cursor: pointer;
     font-size: 60px;
     text-align: center;
@@ -75,6 +105,7 @@ midden {
 }
 
 
+
 /* Add styles for hidden content */
 .hidden-content > div {
     overflow: hidden;
@@ -87,6 +118,20 @@ midden {
     height: 250px; /* Adjust font size as needed */
 }
 
+
+.hidden-content .panel {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 3s ease-in-out;
+    display: none;
+    font-size: 20px;
+    width: 100%;
+    height: 250px;
+}
+
+
+
+
 /* Modify hover styles to target hidden content within the .hidden-content div */
 .letterS:hover + .hidden-content .hiddenS,
 .letterW:hover + .hidden-content .hiddenW,
@@ -95,21 +140,7 @@ midden {
     display: block;
 }
 
-.letterS:hover {
-    color: rgb(57, 255, 20); /* Turn the 'S' red when hovering over it */
-}
 
-.letterW:hover {
-    color: rgb(57, 255, 20); /* Turn the 'W' red when hovering over it */
-}
-
-.letterA:hover {
-    color: rgb(57, 255, 20); /* Turn the 'A' red when hovering over it */
-}
-
-.letterT:hover {
-    color: rgb(57, 255, 20); /* Turn the 'T' red when hovering over it */
-}
 
 .expl {
     color : rgb(255, 183, 0);
@@ -123,24 +154,7 @@ midden {
     font-weight: bolder;
 }
 
-button {
-    background-color: #000000; /* Green */
-    border: none;
-    color: rgb(255, 183, 0);
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bolder;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 2); /* Add a shadow */
 
-  }
-  
-  button:hover {
-    opacity: 0.8;
-  }
 
   .hr {
     border: none;
@@ -162,10 +176,22 @@ button {
     padding: 0;
   }
 
+  #swatLogo1 {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  }
   
   #swatLogo {
   width: 100%;
   height: 100vh; /* volledige schermhoogte */
   object-fit: cover; /* belangrijk! */
   display: block;
+  }
+
+
+  #aboutCompany {
+  max-width: 900px;   /* of 800–1100px naar smaak */
+  margin: 0 auto;
   }

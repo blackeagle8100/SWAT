@@ -55,25 +55,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    const homeButton = document.getElementById("home");
-    const projectButton = document.getElementById("projects");
-    const contactButton = document.getElementById("contact");
 
-    if (homeButton) {
-        homeButton.addEventListener("click", function () {
-            window.location.href = "index.html";
-        });
-    }
-
-    if (projectButton) {
-        projectButton.addEventListener("click", function () {
-            window.location.href = "http://github.com/blackeagle8100";
-        });
-    }
-
-    if (contactButton) {
-        contactButton.addEventListener("click", function () {
-            window.location.href = "index.html";
-        });
-    }
 });

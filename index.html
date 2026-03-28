@@ -1,72 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SWAT: System Web Application Technics</title>
-        <link rel="stylesheet" href="Layout.css">
-        <script src="script.js" defer ></script>
+    <link rel="stylesheet" href="Layout.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
     <header>
-    <nav class="buttons">
-        <a href="index.html">Home</a>
-        <a href="https://github.com/blackeagle8100">Projects</a>
-        <a href="contact.html">Contact</a>
-        <a href="about_us.html">About us</a>
-        <a href="founder.html">Founder</a>
-    </nav>
+        <nav class="buttons">
+            <a href="index.html">Home</a>
+            <a href="https://github.com/blackeagle8100">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="about_us.html">About us</a>
+            <a href="founder.html">Founder</a>
+        </nav>
+
         <div class="letters">
-            <div class="letterS" data-hidden="hiddenS">S</div>
-            <div class="letterW" data-hidden="hiddenW">W</div>
-            <div class="letterA" data-hidden="hiddenA">A</div>
-            <div class="letterT" data-hidden="hiddenT">T</div>
+            <div class="letterS">S</div>
+            <div class="letterW">W</div>
+            <div class="letterA">A</div>
+            <div class="letterT">T</div>
         </div>
+
         <h3 id="openline">Open source oplossingen voor dagelijks gebruik</h3>
-
-        <div class ="hrtop"></div>
+        <div class="hrtop"></div>
     </header>
+
     <main>
-    <div class ="hr"></div>
+    <div class="hr"></div>
 
-    <div class="hidden-content">
-    <div class="panel hiddenS">
-        <p class="expl">System</p>
-        <p>Always look for best product for the task.<br>
-            Bigger isn't always better.<br>
-            Balance your system.<br>
-            Even grandma has discord now!</p>
+    <div class="intro-stage">
+        <div class="hidden-content">
+            <div class="panel hiddenS">
+                <p class="expl">System</p>
+                <p>
+                    Always look for best product for the task.<br>
+                    Bigger isn't always better.<br>
+                    Balance your system.<br>
+                    Even grandma has discord now!
+                </p>
+            </div>
+
+            <div class="panel hiddenW">
+                <p class="expl">Web</p>
+                <p>
+                    Your Spider in web design.<br>
+                    Need a website?<br>
+                    Want to run your own local website?<br>
+                    Tired of ads and commercials?
+                </p>
+            </div>
+
+            <div class="panel hiddenA">
+                <p class="expl">Application</p>
+                <p>
+                    Free up-to-date software.<br>
+                    In need of a program?<br>
+                    Don't know where to start?<br>
+                    We can help you from scratch!
+                </p>
+            </div>
+
+            <div class="panel hiddenT">
+                <p class="expl">Technics</p>
+                <p>
+                    Did your PC explode?<br>
+                    Curious on how?<br>
+                    ChipTune your own PC?<br>
+                    Want to learn how it works?
+                </p>
+            </div>
         </div>
 
-        <div class="panel hiddenW">
-            <p class="expl">Web</p>
-            <p>Your Spider in web design.<br>
-            Need a website?<br>
-            Want to run your own local website?<br>
-            Tired of ads and commercials?</p>
+        <div class="intro-overlay">
+            <img src="img/SWAT.jpg" alt="SWAT logo">
         </div>
-
-        <div class="panel hiddenA">
-            <p class="expl">Application</p>
-            <p>free up-to-date software.<br>
-            In need of a program?<br>
-            Don't know where to start?<br>
-            We can help you from scratch!</p>
-        </div>
-
-        <div class="panel hiddenT">
-            <p class="expl">Technics</p>
-            <p>Did your PC explode?<br>
-            Curious on how?<br>
-            ChipTune your own PC?<br>
-            Want to learn how it works?</p>
-        </div>
-
-        <img id="swatLogo" src="img/SWAT.jpg" alt="Follow my Github!">
     </div>
 
-    <div class ="hr"></div>
-    </main>
+    <div class="intro-landing">
+        <img id="swatLogo" src="img/SWAT.jpg" alt="SWAT logo">
+    </div>
+
+    <div class="hr"></div>
+</main>
+
 </body>
 </html>

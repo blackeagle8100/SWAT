@@ -1,59 +1,88 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const letters = document.querySelectorAll(".letters div");
-    const hiddenContents = document.querySelectorAll(".hidden-content div");
+document.addEventListener("DOMContentLoaded", () => {
+    const letters = document.querySelectorAll(".letters > div");
+    const hiddenContents = document.querySelectorAll(".hidden-content .panel");
     const lines = document.querySelectorAll(".hr");
+    const introOverlay = document.querySelector(".intro-overlay");
+    const introLanding = document.querySelector(".intro-landing");
+
+    if (!letters.length || !hiddenContents.length || !introOverlay || !introLanding) {
+        return;
+    }
 
     let interval = null;
     let currentIndex = 0;
+    let introFinished = false;
 
-    function showCurrentHiddenContent() {
+    function showPanel(index = currentIndex) {
         hiddenContents.forEach((content) => {
             content.style.display = "none";
             content.style.maxHeight = "0";
-        });
-
-        lines.forEach((line) => {
-            line.style.display = "block";
         });
 
         letters.forEach((letter) => {
             letter.style.color = "rgb(57, 255, 20)";
         });
 
-        hiddenContents[currentIndex].style.display = "block";
-        hiddenContents[currentIndex].style.maxHeight =
-        hiddenContents[currentIndex].scrollHeight + "px";
+        lines.forEach((line) => {
+            line.style.display = "block";
+        });
 
-        letters[currentIndex].style.color = "rgb(255, 183, 0)";
+        hiddenContents[index].style.display = "block";
 
-        currentIndex = (currentIndex + 1) % letters.length;
+        requestAnimationFrame(() => {
+            hiddenContents[index].style.maxHeight =
+            hiddenContents[index].scrollHeight + "px";
+        });
+
+        letters[index].style.color = "rgb(255, 183, 0)";
+        currentIndex = (index + 1) % hiddenContents.length;
     }
 
     function startCycle() {
-        clearInterval(interval);
-        interval = setInterval(showCurrentHiddenContent, 10000);
+        stopCycle();
+        interval = setInterval(() => {
+            showPanel(currentIndex);
+        }, 10000);
     }
 
     function stopCycle() {
-        clearInterval(interval);
-        interval = null;
+        if (interval) {
+            clearInterval(interval);
+            interval = null;
+        }
     }
 
-    showCurrentHiddenContent();
-    startCycle();
+    function runIntro() {
+        showPanel(0);
 
-    letters.forEach((letter, index) => {
-        letter.addEventListener("mouseover", function () {
-            stopCycle();
-            currentIndex = index;
-            showCurrentHiddenContent();
+        requestAnimationFrame(() => {
+            introOverlay.classList.add("intro-fall");
         });
 
-        letter.addEventListener("mouseout", function () {
-            currentIndex = (index + 1) % letters.length;
+        introOverlay.addEventListener("transitionend", () => {
+            introOverlay.classList.add("intro-hidden");
+            introLanding.classList.add("show");
+
+            setTimeout(() => {
+                introOverlay.style.display = "none";
+                introFinished = true;
+                startCycle();
+            }, 700);
+        }, { once: true });
+    }
+
+    letters.forEach((letter, index) => {
+        letter.addEventListener("mouseenter", () => {
+            if (!introFinished) return;
+            stopCycle();
+            showPanel(index);
+        });
+
+        letter.addEventListener("mouseleave", () => {
+            if (!introFinished) return;
             startCycle();
         });
     });
 
-
+    runIntro();
 });

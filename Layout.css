@@ -1,3 +1,11 @@
+/* =========================
+ *  BASIS
+ *  ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -5,69 +13,97 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-image: url('img/background.jpg');
+    background-image: url("img/background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: rgb(57, 255, 20);
 }
 
-h2, h3 {
+h1, h2, h3, h4 {
     color: rgb(255, 183, 0);
+    margin-top: 0;
+}
+
+p, li {
+    line-height: 1.6;
 }
 
 header {
     width: 100%;
 }
 
-#openline {
-margin: 0 auto;
-width: 50%;
-text-align: center;
-background-color: rgb(36, 36, 36);
-opacity: 0.8;
-justify-content: center;
+main {
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(36, 36, 36, 0.8);
 }
+
+/* =========================
+ *  NAVIGATIE
+ *  ========================= */
 
 .buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: rgb(36, 36, 36);
-    width: 100%;
     flex-wrap: wrap;
-}
-
-main {
-    align-items: center;
-    background-color: rgba(36, 36, 36, 0.8);
-    width: 80%;
-    padding: 10px;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
     text-align: center;
-    box-sizing: border-box;
 }
 
 .buttons a {
     background-color: #000000;
-    border: none;
     color: rgb(255, 183, 0);
     padding: 15px 32px;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    font-weight: bolder;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .buttons a:hover {
-    opacity: 0.8;
+    opacity: 0.85;
+    transform: translateY(-1px);
 }
 
-.texturl {
-    color: red;
+/* =========================
+ *  LIJNEN
+ *  ========================= */
+
+.hr,
+.hrtop {
+    border: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hr {
+    border-top: 3px solid rgb(57, 255, 20);
+    display: none;
+    opacity: 0.5;
+}
+
+.hrtop {
+    border-top: 3px solid #4b4b4b;
+}
+
+/* =========================
+ *  INDEX - TITEL EN LETTERS
+ *  ========================= */
+
+#openline {
+margin: 0 auto;
+width: 50%;
+padding: 8px 12px;
+text-align: center;
+background-color: rgba(36, 36, 36, 0.8);
 }
 
 .letters {
@@ -79,9 +115,10 @@ main {
     cursor: pointer;
     font-size: 60px;
     text-align: center;
-    transition: font-size 0.3s;
-    color: rgb(255, 183, 0);
+    color: rgb(57, 255, 20);
     font-weight: 1000;
+    letter-spacing: 5px;
+    flex-wrap: wrap;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
     text-shadow:
@@ -92,101 +129,195 @@ main {
     -5px 5px 0 #000,
     -6px 6px 0 #000,
     -7px 7px 0 #000;
-    letter-spacing: 5px;
-    flex-wrap: wrap;
+}
+
+/* =========================
+ *  INDEX - INTRO STAGE / LAYERS
+ *  ========================= */
+
+.intro-stage {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .hidden-content {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    z-index: 1; /* layer 0 */
     width: 100%;
-}
-
-.hidden-content > div {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 3s ease-in-out;
-    display: none;
-    font-size: 20px;
-    width: 100%;
-    min-height: 250px;
-    height: auto;
-    box-sizing: border-box;
 }
 
 .hidden-content .panel {
+    display: none;
     overflow: hidden;
     max-height: 0;
-    transition: max-height 3s ease-in-out;
-    display: none;
-    font-size: 20px;
+    transition: max-height 1.2s ease-in-out;
     width: 100%;
-    min-height: 250px;
-    height: auto;
-    box-sizing: border-box;
-}
-
-.letterS:hover + .hidden-content .hiddenS,
-.letterW:hover + .hidden-content .hiddenW,
-.letterA:hover + .hidden-content .hiddenA,
-.letterT:hover + .hidden-content .hiddenT {
-    display: block;
+    min-height: 420px;
+    padding: 30px 20px;
+    font-size: 20px;
 }
 
 .expl {
     color: rgb(255, 183, 0);
+    font-size: 24px;
+    font-weight: bold;
     text-shadow:
     -1px 1px 0 #000,
     -2px 2px 0 #000,
     -3px 3px 0 #000,
     -4px 4px 0 #000,
     -5px 5px 0 #000;
-    font-size: 24px;
-    font-weight: bolder;
 }
 
-.hr {
-    border: none;
-    border-top: 3px solid rgb(57, 255, 20);
+.intro-stage {
+    position: relative;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
-    margin: 0;
-    padding: 0;
+    overflow: hidden;
+}
+
+.hidden-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.hidden-content .panel {
     display: none;
-    opacity: 0.5;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1.2s ease-in-out;
+    width: 100%;
+    min-height: 420px;
+    padding: 30px 20px;
+    font-size: 20px;
 }
 
-.hrtop {
-    border: none;
-    border-top: 3px solid #4b4b4b;
+.intro-overlay {
+    position: absolute;
+    top: -100%;
+    left: 0;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
-    margin: 0;
-    padding: 0;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    transition: transform 5.5s ease-in-out;
+    will-change: transform;
+}
+
+.intro-overlay.intro-fall {
+    transform: translateY(235%);
+}
+
+.intro-overlay.intro-hidden {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.intro-overlay img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.intro-landing {
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 1s ease, transform 1s ease;
+    margin-top: 0;
+}
+
+.intro-landing.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#swatLogo {
+width: 100%;
+max-height: 70vh;
+object-fit: cover;
+object-position: center;
+display: block;
 }
 
 #swatLogo1 {
 width: 50%;
 height: auto;
 display: block;
-margin: 0 auto;
+margin: 0 auto 20px auto;
 max-width: 100%;
 }
 
-#swatLogo {
-width: 100%;
-height: 100vh;
-object-fit: cover;
-object-position: center;
-display: block;
-}
+/* =========================
+ *  ABOUT PAGE
+ *  ========================= */
 
 #aboutCompany {
 max-width: 900px;
 margin: 0 auto;
-padding: 0 15px;
-box-sizing: border-box;
+padding: 20px 15px;
+}
+
+.texturl {
+    color: rgb(255, 183, 0);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.texturl:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+ *  FOUNDER PAGE
+ *  ========================= */
+
+#founderPage {
+max-width: 1000px;
+margin: 0 auto;
+padding: 20px 15px;
+}
+
+.founder-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.founder-photo {
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.founder-text h1,
+.founder-text h2,
+.founder-text h3 {
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.content-block {
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+.simple-list {
+    list-style-position: inside;
+    padding-left: 0;
+    margin: 15px 0;
 }
 
 .cv-button {
@@ -205,277 +336,15 @@ box-sizing: border-box;
     box-shadow: 0 0 8px rgba(23, 50, 77, 0.6);
 }
 
-.founder-intro {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.founder-photo {
-    width: 150px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    opacity: 1;
-    object-fit: cover;
-}
-
-.founder-text h1 {
-    margin: 0;
-}
-
-.tagline {
-    font-style: italic;
-    margin: 10px 0;
-}
-
 /* =========================
- *  TABLET EN KLEINERE SCHERMEN
+ *  CONTACT PAGE
  *  ========================= */
-@media (max-width: 1024px) {
-    #openline {
-    width: 70%;
-    }
-
-    main {
-        width: 90%;
-    }
-
-    #swatLogo1 {
-    width: 70%;
-    }
-
-    .letters {
-        font-size: 48px;
-        gap: 8px;
-    }
-}
-
-/* =========================
- *  SMARTPHONE PORTRET
- *  ========================= */
-@media (max-width: 768px) {
-    body {
-        background-attachment: scroll;
-    }
-
-    #openline {
-    width: 90%;
-    padding: 10px;
-    box-sizing: border-box;
-    }
-
-    main {
-        width: 95%;
-        padding: 15px 10px;
-    }
-
-    .buttons {
-        flex-direction: column;
-    }
-
-    .buttons a {
-        width: 90%;
-        margin: 5px 0;
-        padding: 12px 20px;
-        font-size: 15px;
-        box-sizing: border-box;
-    }
-
-    .letters {
-        font-size: 36px;
-        gap: 6px;
-        letter-spacing: 2px;
-    }
-
-    .expl {
-        font-size: 20px;
-    }
-
-    .hidden-content > div,
-    .hidden-content .panel {
-        font-size: 17px;
-        min-height: auto;
-        padding: 10px;
-    }
-
-    #swatLogo {
-    height: 50vh;
-    min-height: 220px;
-    }
-
-    #swatLogo1 {
-    width: 85%;
-    }
-
-    .founder-intro {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-
-    .founder-photo {
-        width: 120px;
-    }
-
-    .founder-text h1 {
-        font-size: 26px;
-    }
-
-    .tagline {
-        font-size: 15px;
-    }
-}
-
-/* =========================
- *  SMARTPHONE HORIZONTAAL
- *  ========================= */
-@media (max-width: 932px) and (orientation: landscape) {
-    body {
-        background-attachment: scroll;
-    }
-
-    #openline {
-    width: 92%;
-    padding: 8px 12px;
-    box-sizing: border-box;
-    }
-
-    main {
-        width: 96%;
-        padding: 12px;
-    }
-
-    .buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 8px;
-        box-sizing: border-box;
-    }
-
-    .buttons a {
-        padding: 10px 18px;
-        font-size: 14px;
-    }
-
-    .letters {
-        font-size: 28px;
-        gap: 6px;
-        letter-spacing: 2px;
-        text-shadow:
-        -1px 1px 0 #000,
-        -2px 2px 0 #000,
-        -3px 3px 0 #000;
-    }
-
-    .expl {
-        font-size: 18px;
-    }
-
-    .hidden-content > div,
-    .hidden-content .panel {
-        font-size: 16px;
-        min-height: auto;
-        height: auto;
-        padding: 10px;
-    }
-
-    #swatLogo {
-    height: 70vh;
-    max-height: 400px;
-    object-fit: cover;
-    object-position: center;
-    }
-
-    #swatLogo1 {
-    width: 40%;
-    max-width: 280px;
-    }
-
-    .founder-intro {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        text-align: left;
-        flex-wrap: nowrap;
-    }
-
-    .founder-photo {
-        width: 100px;
-        height: auto;
-    }
-
-    .founder-text h1 {
-        font-size: 24px;
-    }
-
-    .tagline {
-        font-size: 14px;
-    }
-
-    h2, h3 {
-        font-size: 20px;
-    }
-
-    p, li {
-        font-size: 15px;
-    }
-}
-
-/* =========================
- *  ZEER LAGE SCHERMHOOGTE
- *  EXTRA HANDIG VOOR LANDSCAPE MOBIEL
- *  ========================= */
-@media (max-height: 500px) and (orientation: landscape) {
-    #swatLogo {
-    height: 85vh;
-    max-height: 320px;
-    }
-
-    .letters {
-        font-size: 24px;
-    }
-
-    .buttons a {
-        padding: 8px 14px;
-        font-size: 13px;
-    }
-
-    .expl {
-        font-size: 16px;
-    }
-
-    h2, h3 {
-        font-size: 18px;
-    }
-
-    .founder-photo {
-        width: 85px;
-    }
-
-    .founder-text h1 {
-        font-size: 20px;
-    }
-
-    .tagline,
-    p,
-    li {
-        font-size: 14px;
-    }
-}
-
 
 #contact {
 width: 80%;
 max-width: 1200px;
 margin: 0 auto;
 padding: 20px;
-box-sizing: border-box;
 }
 
 .contact-wrapper {
@@ -488,11 +357,20 @@ box-sizing: border-box;
     margin-bottom: 25px;
 }
 
-.contact-grid {
+.contact-layout {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1.2fr;
+    gap: 25px;
+    margin-top: 30px;
+    width: 100%;
+    align-items: start;
+}
+
+.contact-left,
+.contact-right {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
-    margin: 30px 0;
 }
 
 .contact-card {
@@ -501,11 +379,14 @@ box-sizing: border-box;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
 }
 
 .contact-card h4 {
     color: rgb(255, 183, 0);
-    margin-top: 0;
     margin-bottom: 12px;
     font-size: 22px;
 }
@@ -513,17 +394,21 @@ box-sizing: border-box;
 .contact-card p {
     font-size: 16px;
     margin-bottom: 18px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .contact-btn {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     padding: 12px 20px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 6px;
     transition: 0.25s ease;
     min-width: 160px;
+    margin-bottom: 12px;
 }
 
 .email-btn {
@@ -533,7 +418,6 @@ box-sizing: border-box;
 
 .email-btn:hover {
     background-color: #0f2236;
-
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 0 14px rgba(46, 204, 113, 0.7);
 }
@@ -541,6 +425,8 @@ box-sizing: border-box;
 .discord-btn {
     background-color: #5865F2;
     color: white;
+    border: none;
+    cursor: pointer;
 }
 
 .discord-btn:hover {
@@ -561,193 +447,20 @@ box-sizing: border-box;
     box-shadow: 0 0 10px rgba(255, 183, 0, 0.4);
 }
 
-.embed-section {
-    margin-top: 40px;
+.phone-btn {
+    background: linear-gradient(135deg, #1f6f3d, #2ecc71);
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-.embed-section h4 {
-    color: rgb(255, 183, 0);
-    margin-bottom: 10px;
-    font-size: 24px;
+.phone-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 14px rgba(46, 204, 113, 0.7);
 }
 
-.embed-text {
-    margin-bottom: 15px;
-}
-
-.embed-box {
-    width: 100%;
-    background-color: rgba(20, 20, 20, 0.85);
-    border: 2px solid rgb(57, 255, 20);
-    border-radius: 10px;
-    padding: 12px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.embed-box iframe {
-    display: block;
-    width: 100%;
-    border-radius: 8px;
-}
-
-/* TABLET */
-@media (max-width: 1024px) {
-    .contact-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-/* SMARTPHONE */
-@media (max-width: 768px) {
-    #contact {
-    width: 95%;
-    padding: 15px 10px;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-card {
-        padding: 16px;
-    }
-
-    .contact-card h4 {
-        font-size: 20px;
-    }
-
-    .contact-card p {
-        font-size: 15px;
-    }
-
-    .contact-btn {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .embed-section h4 {
-        font-size: 20px;
-    }
-}
-
-/* SMARTPHONE LANDSCAPE */
-@media (max-width: 932px) and (orientation: landscape) {
-    #contact {
-    width: 96%;
-    padding: 12px;
-    }
-
-    .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .contact-card h4 {
-        font-size: 18px;
-    }
-
-    .contact-card p {
-        font-size: 14px;
-    }
-
-    .contact-btn {
-        padding: 10px 14px;
-        font-size: 14px;
-    }
-
-    .embed-box iframe {
-        height: 280px;
-    }
-}
-
-@media (max-width: 600px) and (orientation: landscape) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .embed-box iframe {
-        height: 220px;
-    }
-}
-
-
-#contact {
-width: 80%;
-max-width: 1200px;
-margin: 0 auto;
-padding: 20px;
-box-sizing: border-box;
-}
-
-.contact-wrapper {
-    width: 100%;
-    text-align: center;
-}
-
-.contact-intro {
+.phone-icon {
     font-size: 18px;
-    margin-bottom: 25px;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin: 30px 0;
-}
-
-.contact-card {
-    background-color: rgba(20, 20, 20, 0.85);
-    border: 2px solid rgb(57, 255, 20);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
-}
-
-.contact-card h4 {
-    color: rgb(255, 183, 0);
-    margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 22px;
-}
-
-.contact-card p {
-    font-size: 16px;
-    margin-bottom: 18px;
-    line-height: 1.5;
-}
-
-.contact-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: 0.25s ease;
-    min-width: 160px;
-}
-
-.email-btn {
-    background-color: #17324d;
-    color: white;
-}
-
-.email-btn:hover {
-    background-color: #0f2236;
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px rgba(23, 50, 77, 0.8);
-}
-
-.discord-btn {
-    background-color: #5865F2;
-    color: white;
-}
-
-.discord-btn:hover {
-    background-color: #4752c4;
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px rgba(88, 101, 242, 0.8);
 }
 
 .embed-section {
@@ -770,7 +483,6 @@ box-sizing: border-box;
     border: 2px solid rgb(57, 255, 20);
     border-radius: 10px;
     padding: 12px;
-    box-sizing: border-box;
     overflow: hidden;
 }
 
@@ -779,51 +491,6 @@ box-sizing: border-box;
     width: 100%;
     border-radius: 8px;
 }
-
-@media (max-width: 768px) {
-    #contact {
-    width: 95%;
-    padding: 15px 10px;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-btn {
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
-
-@media (max-width: 932px) and (orientation: landscape) {
-    #contact {
-    width: 96%;
-    padding: 12px;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
-
-    .embed-box iframe {
-        height: 280px;
-    }
-}
-
-@media (max-width: 600px) and (orientation: landscape) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .embed-box iframe {
-        height: 220px;
-    }
-}
-
-
-
 
 /* =========================
  *  DISCORD CONTACT FORM
@@ -846,11 +513,22 @@ box-sizing: border-box;
     width: 100%;
 }
 
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 100%;
+}
+
+.form-group-small {
+    max-width: 100%;
 }
 
 .form-group label {
@@ -870,7 +548,6 @@ box-sizing: border-box;
     color: white;
     font-size: 15px;
     font-family: Arial, sans-serif;
-    box-sizing: border-box;
     outline: none;
     transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
 }
@@ -894,8 +571,6 @@ box-sizing: border-box;
 
 .discord-contact-form button {
     width: 100%;
-    border: none;
-    cursor: pointer;
     font-size: 16px;
     margin-top: 4px;
 }
@@ -910,28 +585,27 @@ box-sizing: border-box;
 }
 
 /* =========================
- *  CONTACT CARD FIJNERE AFWERKING
- *  ========================= */
-
-.contact-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-}
-
-.contact-card .contact-btn {
-    margin-bottom: 12px;
-}
-
-.contact-card p {
-    line-height: 1.6;
-}
-
-/* =========================
  *  TABLET
  *  ========================= */
+
 @media (max-width: 1024px) {
+    #openline {
+    width: 70%;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    #swatLogo1 {
+    width: 70%;
+    }
+
+    .letters {
+        font-size: 48px;
+        gap: 8px;
+    }
+
     .discord-contact-form {
         gap: 16px;
     }
@@ -942,15 +616,115 @@ box-sizing: border-box;
 }
 
 /* =========================
- *  SMARTPHONE
+ *  SMARTPHONE PORTRET
  *  ========================= */
+
 @media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    #openline {
+    width: 90%;
+    padding: 10px;
+    }
+
+    main,
+    #contact {
+    width: 95%;
+    padding: 15px 10px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons a {
+        width: 90%;
+        margin: 5px 0;
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+
+    .letters {
+        font-size: 36px;
+        gap: 6px;
+        letter-spacing: 2px;
+    }
+
+    .expl {
+        font-size: 20px;
+    }
+
+    .hidden-content .panel {
+        font-size: 17px;
+        min-height: 320px;
+        padding: 20px 12px;
+    }
+
+    #swatLogo1 {
+    width: 85%;
+    }
+
+    .founder-intro {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .founder-photo {
+        width: 120px;
+    }
+
+    .founder-text h1 {
+        font-size: 26px;
+    }
+
+    .tagline {
+        font-size: 15px;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-left,
+    .contact-right {
+        width: 100%;
+    }
+
+    .contact-card {
+        padding: 16px;
+    }
+
+    .contact-card h4 {
+        font-size: 20px;
+    }
+
+    .contact-card p {
+        font-size: 15px;
+    }
+
+    .contact-btn {
+        width: 100%;
+    }
+
+    .embed-section h4 {
+        font-size: 20px;
+    }
+
     .discord-form-intro {
         font-size: 14px;
         text-align: left;
     }
 
     .discord-contact-form {
+        gap: 14px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
         gap: 14px;
     }
 
@@ -982,7 +756,113 @@ box-sizing: border-box;
 /* =========================
  *  SMARTPHONE LANDSCAPE
  *  ========================= */
+
 @media (max-width: 932px) and (orientation: landscape) {
+    body {
+        background-attachment: scroll;
+    }
+
+    #openline {
+    width: 92%;
+    padding: 8px 12px;
+    }
+
+    main,
+    #contact {
+    width: 96%;
+    padding: 12px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .buttons a {
+        padding: 10px 18px;
+        font-size: 14px;
+        width: auto;
+        margin: 0;
+    }
+
+    .letters {
+        font-size: 28px;
+        gap: 6px;
+        letter-spacing: 2px;
+        text-shadow:
+        -1px 1px 0 #000,
+        -2px 2px 0 #000,
+        -3px 3px 0 #000;
+    }
+
+    .expl {
+        font-size: 18px;
+    }
+
+    .hidden-content .panel {
+        font-size: 16px;
+        min-height: 280px;
+        padding: 16px 12px;
+    }
+
+    #swatLogo1 {
+    width: 40%;
+    max-width: 280px;
+    }
+
+    .founder-intro {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        text-align: left;
+        flex-wrap: nowrap;
+    }
+
+    .founder-photo {
+        width: 100px;
+    }
+
+    .founder-text h1 {
+        font-size: 24px;
+    }
+
+    .tagline {
+        font-size: 14px;
+    }
+
+    h2, h3 {
+        font-size: 20px;
+    }
+
+    p, li {
+        font-size: 15px;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .contact-card h4 {
+        font-size: 18px;
+    }
+
+    .contact-card p {
+        font-size: 14px;
+    }
+
+    .contact-btn {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .embed-box iframe {
+        height: 280px;
+    }
+
     .form-group textarea {
         min-height: 130px;
     }
@@ -994,76 +874,49 @@ box-sizing: border-box;
     }
 }
 
-
-
-
-
-/* =========================
- *  NIEUWE CONTACT LAYOUT
- *  ========================= */
-
-.contact-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 25px;
-    margin-top: 30px;
-    width: 100%;
-}
-
-.contact-left,
-.contact-right {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Discord kant iets prominenter */
-.contact-right .contact-card {
-    padding: 24px;
-}
-
-/* kaarten consistent */
-.contact-left .contact-card,
-.contact-right .contact-card {
-    height: 100%;
-}
-
-/* =========================
- *  MOBIEL
- *  ========================= */
-
-@media (max-width: 768px) {
+@media (max-width: 600px) and (orientation: landscape) {
     .contact-layout {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
 
-    .contact-left,
-    .contact-right {
-        width: 100%;
+    .embed-box iframe {
+        height: 220px;
     }
 }
 
+/* =========================
+ *  ZEER LAGE SCHERMHOOGTE
+ *  ========================= */
 
-.phone-btn {
-    background: linear-gradient(135deg, #1f6f3d, #2ecc71);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
+@media (max-height: 500px) and (orientation: landscape) {
+    .letters {
+        font-size: 24px;
+    }
+
+    .buttons a {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .expl {
+        font-size: 16px;
+    }
+
+    h2, h3 {
+        font-size: 18px;
+    }
+
+    .founder-photo {
+        width: 85px;
+    }
+
+    .founder-text h1 {
+        font-size: 20px;
+    }
+
+    .tagline,
+    p,
+    li {
+        font-size: 14px;
+    }
 }
-
-.phone-btn:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 0 14px rgba(46, 204, 113, 0.7);
-}
-
-.phone-icon {
-    font-size: 18px;
-}
-

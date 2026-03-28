@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SWAT: Contact</title>
     <link rel="stylesheet" href="Layout.css">
-    <script src="script.js" defer></script>
-</head>
+    <script src="discord-contact.js" defer></script>
+
+
+    </head>
 <body>
     <header>
         <nav class="buttons">
@@ -26,63 +28,132 @@
         <section class="contact-wrapper">
             <h3>Contact</h3>
             <p class="contact-intro">
-                Neem contact op met SWAT via e-mail, Discord of locatie.
+                Neem contact op met SWAT via e-mail, telefoon, Discord of locatie.
             </p>
 
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h4>E-mail</h4>
-                    <p>Voor vragen, samenwerking of projecten.</p>
-                    <a class="contact-btn email-btn" href="mailto:blackeagle8100@gmail.com">
-                        Mail SWAT
-                    </a>
+            <div class="contact-layout">
+
+                <!-- LINKERKOLOM -->
+                <div class="contact-left">
+
+                    <div class="contact-card">
+                        <h4>E-mail & Telefoon</h4>
+                        <p>Voor vragen, samenwerking of projecten.</p>
+
+                        <a class="contact-btn email-btn" href="mailto:blackeagle8100@gmail.com">
+                            Mail SWAT
+                        </a>
+
+                          <a class="contact-btn phone-btn" href="tel:+32468230239">
+                            Tel: +32 468 23 02 39
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <h4>Locatie</h4>
+                        <p class="embed-text">
+                            Blauwkasteelstraat 86, 8400 Oostende
+                        </p>
+
+                        <div class="embed-box">
+                            <iframe
+                                src="https://www.google.com/maps?q=Blauwkasteelstraat+86,+8400+Oostende&output=embed"
+                                width="100%"
+                                height="300"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="contact-card">
-                    <h4>Discord</h4>
-                    <p>Praat rechtstreeks via Discord of join de community.</p>
-                    <a class="contact-btn discord-btn" href="https://discord.gg/bmgkN3A3hg" target="_blank" rel="noopener noreferrer">
-                        Open Discord
-                    </a>
+                <!-- RECHTERKOLOM -->
+                <div class="contact-right">
+
+                    <div class="contact-card">
+                        <h4>Discord</h4>
+                        <p>
+                            Praat rechtstreeks via Discord of laat hieronder een bericht achter.
+                        </p>
+
+                        <a class="contact-btn discord-btn" href="https://discord.gg/bmgkN3A3hg" target="_blank" rel="noopener noreferrer">
+                            Open Discord
+                        </a>
+
+                        <p class="discord-form-intro">
+                            Geen discord?<br>Laat hier u bericht na.<br>Dan ontvangen wij dit rechtstreeks via onze Discord-bot.
+                        </p>
+
+                        <form id="discordContactForm" class="discord-contact-form">
+                            <div class="form-group">
+                                <label for="subject">Onderwerp</label>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    placeholder="Onderwerp van je bericht"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Naam</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Je naam"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Telefoonnummer</label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        placeholder="+32 4xx xx xx xx"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-group form-group-small">
+                                <label for="email">E-mail</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Je e-mailadres"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Uw bericht</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="8"
+                                    placeholder="Typ hier je bericht..."
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button type="submit" class="contact-btn discord-btn">
+                                Verstuur bericht
+                            </button>
+
+                            <p id="formStatus" class="form-status"></p>
+                        </form>
+                    </div>
+
                 </div>
+
             </div>
-
-            <section class="embed-section">
-                <h4>Discord Server</h4>
-                <p class="embed-text">
-                    Join de server rechtstreeks hieronder.
-                </p>
-
-                <div class="embed-box">
-                    <iframe
-                        src="https://discord.com/widget?id=1487098752350027989&theme=dark"
-                        width="100%"
-                        height="400"
-                        allowtransparency="true"
-                        frameborder="0"
-                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
-                    </iframe>
-                </div>
-            </section>
-
-            <section class="embed-section">
-                <h4>Locatie</h4>
-                <p class="embed-text">
-                    Blauwkasteelstraat 86, 8400 Oostende
-                </p>
-
-                <div class="embed-box">
-                    <iframe
-                        src="https://www.google.com/maps?q=Blauwkasteelstraat+86,+8400+Oostende&output=embed"
-                        width="100%"
-                        height="350"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </section>
         </section>
     </main>
 </body>

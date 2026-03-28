@@ -533,8 +533,9 @@ box-sizing: border-box;
 
 .email-btn:hover {
     background-color: #0f2236;
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px rgba(23, 50, 77, 0.8);
+
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 14px rgba(46, 204, 113, 0.7);
 }
 
 .discord-btn {
@@ -820,3 +821,249 @@ box-sizing: border-box;
         height: 220px;
     }
 }
+
+
+
+
+/* =========================
+ *  DISCORD CONTACT FORM
+ *  ========================= */
+
+.discord-form-intro {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgb(57, 255, 20);
+}
+
+.discord-contact-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: left;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(255, 183, 0);
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid rgba(57, 255, 20, 0.55);
+    border-radius: 8px;
+    background-color: rgba(10, 10, 10, 0.9);
+    color: white;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: rgb(57, 255, 20);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.35);
+}
+
+.form-group textarea {
+    min-height: 180px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.discord-contact-form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.form-status {
+    min-height: 22px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(255, 183, 0);
+    text-align: center;
+}
+
+/* =========================
+ *  CONTACT CARD FIJNERE AFWERKING
+ *  ========================= */
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.contact-card .contact-btn {
+    margin-bottom: 12px;
+}
+
+.contact-card p {
+    line-height: 1.6;
+}
+
+/* =========================
+ *  TABLET
+ *  ========================= */
+@media (max-width: 1024px) {
+    .discord-contact-form {
+        gap: 16px;
+    }
+
+    .form-group textarea {
+        min-height: 160px;
+    }
+}
+
+/* =========================
+ *  SMARTPHONE
+ *  ========================= */
+@media (max-width: 768px) {
+    .discord-form-intro {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .discord-contact-form {
+        gap: 14px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 11px 12px;
+        font-size: 14px;
+        border-radius: 7px;
+    }
+
+    .form-group textarea {
+        min-height: 150px;
+    }
+
+    .discord-contact-form button {
+        font-size: 15px;
+        padding: 12px 16px;
+    }
+
+    .form-status {
+        font-size: 13px;
+    }
+}
+
+/* =========================
+ *  SMARTPHONE LANDSCAPE
+ *  ========================= */
+@media (max-width: 932px) and (orientation: landscape) {
+    .form-group textarea {
+        min-height: 130px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+}
+
+
+
+
+
+/* =========================
+ *  NIEUWE CONTACT LAYOUT
+ *  ========================= */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 25px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.contact-left,
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Discord kant iets prominenter */
+.contact-right .contact-card {
+    padding: 24px;
+}
+
+/* kaarten consistent */
+.contact-left .contact-card,
+.contact-right .contact-card {
+    height: 100%;
+}
+
+/* =========================
+ *  MOBIEL
+ *  ========================= */
+
+@media (max-width: 768px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-left,
+    .contact-right {
+        width: 100%;
+    }
+}
+
+
+.phone-btn {
+    background: linear-gradient(135deg, #1f6f3d, #2ecc71);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.phone-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 14px rgba(46, 204, 113, 0.7);
+}
+
+.phone-icon {
+    font-size: 18px;
+}
+

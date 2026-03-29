@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElderOS | SWAT</title>
+  <link rel="stylesheet" href="Layout.css" />
+  <style>
+    /* Alleen pagina-specifieke styling voor ElderOS */
+    #elderosPage {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 15px 40px 15px;
+      text-align: left;
+    }
+
+    body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url("img/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: rgb(57, 255, 20);
+}
+
+    .elderos-hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 35px;
+    }
+
+    .elderos-hero-text {
+      background-color: rgba(20, 20, 20, 0.82);
+      border: 2px solid rgb(57, 255, 20);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+    }
+
+    .elderos-hero-text h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .elderos-tagline {
+      color: rgb(57, 255, 20);
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .elderos-hero-text p {
+      margin-bottom: 14px;
+      font-size: 17px;
+    }
+
+    .elderos-hero-image {
+      background-color: rgba(20, 20, 20, 0.82);
+      border: 2px solid rgb(57, 255, 20);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+    }
+
+    .elderos-hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+    }
+
+    .elderos-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .elderos-actions .contact-btn {
+      min-width: 210px;
+    }
+
+    .elderos-section {
+      background-color: rgba(20, 20, 20, 0.82);
+      border: 2px solid rgb(57, 255, 20);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    }
+
+    .elderos-section h2 {
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .elderos-section p {
+      margin-bottom: 14px;
+      font-size: 17px;
+    }
+
+    .elderos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .elderos-card {
+      background-color: rgba(8, 8, 8, 0.88);
+      border: 1px solid rgba(57, 255, 20, 0.55);
+      border-radius: 10px;
+      padding: 18px;
+    }
+
+    .elderos-card h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .elderos-list,
+    .elderos-sublist {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .elderos-list li,
+    .elderos-sublist li {
+      margin-bottom: 8px;
+    }
+
+    .elderos-sublist {
+      margin-top: 10px;
+    }
+
+    .elderos-highlight {
+      color: rgb(255, 183, 0);
+      font-weight: bold;
+    }
+
+    .elderos-rollout {
+      text-align: center;
+    }
+
+    .elderos-rollout .expl {
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .elderos-hero,
+      .elderos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .elderos-hero-text h1 {
+        font-size: 34px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #elderosPage {
+        padding: 15px 10px 30px 10px;
+      }
+
+      .elderos-section,
+      .elderos-hero-text,
+      .elderos-hero-image {
+        padding: 18px;
+      }
+
+      .elderos-section h2 {
+        font-size: 24px;
+      }
+
+      .elderos-hero-text h1 {
+        font-size: 30px;
+      }
+
+      .elderos-tagline,
+      .elderos-section p,
+      .elderos-hero-text p,
+      .elderos-list li,
+      .elderos-sublist li {
+        font-size: 16px;
+      }
+
+      .elderos-actions .contact-btn {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <hr class="hrtop" />
+
+    <div id="openline">
+      <h1 class="letters">SWAT</h1>
+      <p class="expl">System, Web, Applications &amp; Technique</p>
+    </div>
+
+    <div class="buttons">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="founder.html">Founder</a>
+      <a href="elderos.html">ElderOS</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <hr class="hrtop" />
+  </header>
+
+  <main>
+    <section id="elderosPage">
+      <div class="elderos-hero">
+        <div class="elderos-hero-text">
+          <h1>ElderOS</h1>
+          <p class="elderos-tagline">Toegankelijke open-source technologie voor ouderen en slechtzienden.</p>
+          <p>
+            ElderOS is een open-source softwarepakket dat ontworpen werd om computers en smartphones
+            toegankelijker te maken voor ouderen, slechtzienden en iedereen die nood heeft aan een
+            eenvoudige, rustige en duidelijke digitale omgeving.
+          </p>
+          <p>
+            Het project bevat een reeks Python- en Bash-applicaties die een groot, eenvoudig en
+            afleidingsvrij bedieningspaneel bieden, met duidelijke knoppen en herkenbare navigatie.
+          </p>
+          <p>
+            ElderOS is een onderdeel van het <span class="elderos-highlight">SWAT-project</span>
+            (System, Web, Applications &amp; Technique), een initiatief dat inzet op lokale, open en
+            begrijpbare technologie.
+          </p>
+          <div class="elderos-actions">
+            <a class="contact-btn discord-btn" href="https://github.com/blackeagle8100/ElderOS/" target="_blank" rel="noopener noreferrer">Open GitHub repository</a>
+          </div>
+        </div>
+
+        <div class="elderos-hero-image">
+          <img src="https://raw.githubusercontent.com/blackeagle8100/ElderOS/refs/heads/main/2026-01-23_13-21-42.png" alt="Voorbeeld van de ElderOS-interface" />
+        </div>
+      </div>
+
+      <div class="elderos-grid">
+        <section class="elderos-section elderos-card">
+          <h2>🎯 Doel van het project</h2>
+          <ul class="elderos-list">
+            <li><strong>Eenvoud:</strong> grote knoppen, fullscreen apps, herkenbare navigatie</li>
+            <li><strong>Toegankelijkheid:</strong> ontworpen voor mensen met beperkte motoriek of zicht</li>
+            <li><strong>Onafhankelijkheid:</strong> geen cloud-lock-in, geen dataverkoop, geen reclame</li>
+            <li><strong>Openheid:</strong> broncode beschikbaar voor aanpassingen en verbeteringen</li>
+            <li><strong>Lokale controle:</strong> alles draait op het toestel van de gebruiker zelf</li>
+          </ul>
+        </section>
+
+        <section class="elderos-section elderos-card">
+          <h2>🖥️ Functies</h2>
+          <p>De open-source onderdelen van ElderOS omvatten:</p>
+          <ul class="elderos-list">
+            <li>Groot hoofdmenu</li>
+            <li>
+              Fullscreen-apps voor:
+              <ul class="elderos-sublist">
+                <li>Facebook</li>
+                <li>YouTube</li>
+                <li>Mail</li>
+                <li>Muziek</li>
+                <li>TV / streaming</li>
+                <li>Weer</li>
+                <li>Foto-galerij</li>
+                <li>Spelletjes</li>
+                <li>Internet (Facebook en YouTube)</li>
+                <li>ADB smartwatch connectie (telefoon / telefoonboek)</li>
+              </ul>
+            </li>
+            <li>Instellingentools</li>
+            <li>Encryptiesysteem voor lokaal opslaan van dienst-wachtwoorden</li>
+            <li>Scripts die de interface vereenvoudigen en onnodige afleiding blokkeren</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="elderos-section">
+        <h2>Wat ElderOS bijzonder maakt</h2>
+        <p>
+          ElderOS werd opgebouwd met één duidelijke gedachte: digitale technologie moet opnieuw rust,
+          overzicht en veiligheid brengen. Geen kleine knopjes, geen verwarrende menu's, geen overbodige
+          afleiding — gewoon een duidelijk systeem dat werkt via een touchscreen, met grote iconen en een
+          eenvoudige bediening.
+        </p>
+        <p>
+          De interface volgt een herkenbare, bijna nostalgische stijl met een simpele look.
+          Pijltje links, pijltje rechts en
+          in het midden de gekozen app. Zo blijft het systeem intuïtief voor gebruikers die niet vertrouwd
+          zijn met klassieke computers, muis of toetsenbord.
+        </p>
+        <p>
+          En dit allemaal met een grote, leesbare interface die volledig afgestemd is op comfort,
+          duidelijkheid en zelfstandigheid.
+        </p>
+      </section>
+
+      <section class="elderos-section">
+        <h2>Open source en lokale controle</h2>
+        <p>
+          Dit alles bevindt zich als volledig open broncode in deze repository. Daardoor blijft ElderOS
+          aanpasbaar, transparant en uitbreidbaar voor iedereen die wil bijdragen of het systeem wil
+          afstemmen op een specifieke gebruiker of situatie.
+        </p>
+        <p>
+          De focus ligt op lokale controle: gegevens blijven zoveel mogelijk op het toestel zelf,
+          met veilige opslag van gevoelige informatie via <span class="elderos-highlight">AES-256-encryptie</span>
+          en een unieke sleutel per installatie.
+        </p>
+      </section>
+
+      <section class="elderos-section elderos-rollout">
+        <span class="expl">rollout V1 (if it works, don't touch it!)</span>
+        <h2>Volgende stop</h2>
+        <ul class="elderos-list">
+          <li>Roll-out van de nieuwe digitale wekker en kalender</li>
+          <li>Verbeteren van de code, efficiënter maken, minder belastend voor u en uw pc</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
